@@ -11,6 +11,22 @@ This folder contains my work and exercises completed as part of **LLM Zoomcamp 2
 * Persistent RAG Systems
 * Agent-Based Applications
 
+## Folder Structure
+
+```text
+module-1/
+├── notebook.ipynb
+├── rag_clean.ipynb
+├── persistent_rag.ipynb
+├── persistent_rag_ingest.ipynb
+├── agents.ipynb
+├── ingest.py
+├── rag_helper.py
+├── main.py
+├── pyproject.toml
+└── uv.lock
+```
+
 ## Files
 
 | File                          | Description                                |
@@ -103,6 +119,49 @@ By the end of Module 1, my understanding is:
 * Agentic RAG combines retrieval with agent workflows.
 * Frameworks help manage complex multi-agent and multi-tool systems through orchestration.
 
+## Next Steps
+
+- Embeddings
+- Vector Search
+- Vector Databases
+- Orchestration
+- Evaluation and Monitoring
+- Multi Agent Systems
+- Advanced Agentic RAG
+- Capstone projects
+
+## Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/RudranshKadiveti/llm-zoomcamp-2026.git
+cd llm-zoomcamp-2026/module-1
+```
+
+### Create and sync the environment
+
+```bash
+uv sync
+```
+
+### Activate the virtual environment
+
+```bash
+source .venv/bin/activate
+```
+
+### Launch Jupyter
+
+```bash
+jupyter notebook
+```
+
+or
+
+```bash
+jupyter lab
+```
 
 ## Course
 

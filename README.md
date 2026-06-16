@@ -24,8 +24,8 @@ Through this course, I aim to:
 | Module   | Status      | Topics                                                         |
 | -------- | ----------- | -------------------------------------------------------------- |
 | Module 1 | ✅ Completed | RAG, Chunking, Persistent RAG, Agents, Agentic RAG, Frameworks |
-| Module 2 | ⏳ In Progress  | Vector Search, Vector Databases and Embeddings                                                  |
-| Module 3 | ⬜ Planned   | To be updated                                                  |
+| Module 2 | ✅ Completed | Embeddings, Semantic Search, Vector Search, SQLite, PGVector   |
+| Module 3 | ⏳ In Progress   | Workflow Orchestration with Kestra                             |
 | Module 4 | ⬜ Planned   | To be updated                                                  |
 | Module 5 | ⬜ Planned   | To be updated                                                  |
 
@@ -90,9 +90,64 @@ One of the most important takeaways from this module was understanding the purpo
 
 ---
 
+### Module 2 – Vector Search
+
+Module 2 focused on the retrieval layer that powers modern Retrieval-Augmented Generation (RAG) systems. The emphasis was on understanding how textual information can be transformed into vector embeddings and efficiently retrieved using semantic similarity.
+
+#### Topics Covered
+
+* Embeddings
+* Semantic Search
+* Vector Similarity Search
+* Minsearch
+* SQLite-based Persistent Vector Search
+* PostgreSQL + PGVector
+* Chunking Strategies
+* Production Retrieval Architectures
+
+#### Key Learnings
+
+* Learned how embeddings represent semantic meaning as dense numerical vectors.
+* Built semantic search systems capable of retrieving information based on meaning rather than exact keyword matches.
+* Compared in-memory vector search with persistent vector storage approaches.
+* Implemented vector search using SQLite for persistence and experimentation.
+* Explored PostgreSQL with PGVector as a production-oriented vector database solution.
+* Understood how chunking strategies influence retrieval quality.
+* Learned the distinction between retrieval quality and infrastructure scalability.
+
+#### Technologies Explored
+
+* OpenAI Embeddings
+* Minsearch
+* SQLite
+* PostgreSQL
+* PGVector
+* Docker
+
+#### Most Valuable Insight
+
+One of the most important takeaways from this module was understanding that vector databases do not inherently improve retrieval quality.
+
+> Retrieval quality is primarily determined by the quality of embeddings, chunking strategies, and retrieval techniques. Vector databases such as PGVector primarily provide persistence, scalability, concurrency, and production-ready infrastructure rather than improved semantic understanding.
+
+#### Implementations
+
+Throughout this module, I implemented:
+
+* Semantic search using vector embeddings
+* Persistent vector storage using SQLite
+* Vector retrieval with PostgreSQL and PGVector
+* Document ingestion pipelines
+* Retrieval helper utilities
+* Retrieval-Augmented Generation (RAG) components
+
+📁 Detailed notes, notebooks, and implementations can be found in the `module-2` directory.
+
+---
+
 ## Learning Journey
 
-Current understanding developed through Module 1:
+Current understanding developed through Modules 1 and 2:
 
 ```text
 LLMs
@@ -101,20 +156,53 @@ RAG
   ↓
 Chunking
   ↓
+Embeddings
+  ↓
+Vector Search
+  ↓
+Persistent Vector Storage
+  ↓
+PGVector
+  ↓
 Agents
   ↓
 Agentic RAG
   ↓
-Frameworks (Orchestration)
+Frameworks & Orchestration
 ```
 
-This repository will continue to evolve as I progress through the remaining modules and explore more advanced concepts in AI Engineering.
+This journey has helped me understand how modern AI systems move from raw documents to production-ready retrieval pipelines capable of supporting Large Language Models with external knowledge.
+
+---
+
+## What's Next?
+
+The next stage of the Zoomcamp focuses on **Workflow Orchestration with Kestra**.
+
+Key areas I expect to explore include:
+
+* Workflow automation
+* Pipeline orchestration
+* Scheduled data ingestion
+* Automated embedding generation
+* Managing multi-step AI workflows
+* Building reproducible and maintainable AI systems
+
+A major goal will be moving from manually executed notebooks and scripts toward automated, production-oriented AI pipelines.
 
 ---
 
 ## Future Modules
 
-Future modules will continue building upon the foundations established in Module 1. Topics, projects, and implementations will be added as they are completed throughout the course.
+Future modules will continue building upon the foundations established in Modules 1 and 2. Topics, projects, and implementations will be added as they are completed throughout the course.
+
+Planned areas include:
+
+* Workflow Orchestration
+* Evaluation and Monitoring
+* Agentic Systems
+* Production AI Engineering Practices
+* End-to-End AI Applications
 
 ---
 
@@ -131,4 +219,6 @@ This repository serves as:
 
 ## About Me
 
-I am a Computer Science student with interests in AI/ML, Software Engineering, and Large Language Model applications. This repository documents my progress as I continue building practical skills through project-based learning and experimentation.
+I am a Computer Science student with interests in AI/ML, Software Engineering, and Large Language Model applications.
+
+This repository documents my progress as I continue building practical skills through project-based learning, experimentation, and hands-on implementation of modern AI systems.

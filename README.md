@@ -107,22 +107,25 @@ Module 2 focused on the retrieval layer that powers modern Retrieval-Augmented G
 
 #### Key Learnings
 
-* Learned how embeddings represent semantic meaning as dense numerical vectors.
-* Built semantic search systems capable of retrieving information based on meaning rather than exact keyword matches.
-* Compared in-memory vector search with persistent vector storage approaches.
-* Implemented vector search using SQLite for persistence and experimentation.
-* Explored PostgreSQL with PGVector as a production-oriented vector database solution.
-* Understood how chunking strategies influence retrieval quality.
-* Learned the distinction between retrieval quality and infrastructure scalability.
+- Learned how embedding models convert text into dense vector representations.
+- Used the all-MiniLM-L6-v2 Sentence Transformer model to generate semantic embeddings.
+- Built semantic search systems capable of retrieving information based on meaning rather than exact keyword matches.
+- Compared in-memory vector search with persistent vector storage approaches.
+- Implemented vector search using SQLite for persistence and experimentation.
+- Explored PostgreSQL with PGVector as a production-oriented vector database solution.
+- Understood how chunking strategies influence retrieval quality.
+- Learned the distinction between retrieval quality and infrastructure scalability.
 
 #### Technologies Explored
 
-* OpenAI Embeddings
-* Minsearch
-* SQLite
-* PostgreSQL
-* PGVector
-* Docker
+- Sentence Transformers
+- all-MiniLM-L6-v2 Embedding Model
+- Minsearch
+- SQLite
+- PostgreSQL
+- PGVector
+- Docker
+- NumPy
 
 #### Most Valuable Insight
 

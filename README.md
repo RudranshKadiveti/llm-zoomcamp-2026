@@ -25,9 +25,9 @@ Through this course, I aim to:
 | -------- | ----------- | -------------------------------------------------------------- |
 | Module 1 | ✅ Completed | RAG, Chunking, Persistent RAG, Agents, Agentic RAG, Frameworks |
 | Module 2 | ✅ Completed | Embeddings, Semantic Search, Vector Search, SQLite, PGVector   |
-| Module 3 | ⏳ In Progress   | Workflow Orchestration with Kestra                             |
-| Module 4 | ⬜ Planned   | To be updated                                                  |
-| Module 5 | ⬜ Planned   | To be updated                                                  |
+| Module 3 | ✅ Completed   | Workflow Orchestration with Kestra                             |
+| Module 4 | ✅ Completed   | Ground Truth Generation, Search / RAG / Agent Evaluation       |
+| Module 5 | ⏳ In Progress   | Monitoring                                                   |
 
 ---
 
@@ -50,7 +50,7 @@ Each module folder contains:
 * Notes and learning summaries
 * Jupyter notebooks
 * Experiments and implementations
-* Supporting scripts and utilities
+* Supporting scripts, Docker/config files, and utilities
 * Module-specific documentation
 
 ---
@@ -148,9 +148,66 @@ Throughout this module, I implemented:
 
 ---
 
+### Module 3 – Workflow Orchestration with Kestra
+
+Module 3 introduces workflow orchestration using [Kestra](https://kestra.io/), moving away from manually executed notebooks and scripts toward automated, observable pipelines.
+
+#### Topics Covered
+
+* Workflow Orchestration Concepts
+* Kestra Setup with Docker Compose
+* Secrets Management for Orchestrated Workflows
+* Kestra's Built-in AI Assistant
+
+#### Key Learnings
+
+* Understood why production AI systems need orchestration rather than manually run scripts.
+* Set up Kestra locally alongside a dedicated PostgreSQL backend using Docker Compose.
+* Learned how to manage API keys and secrets (Gemini, Tavily, OpenAI) securely within an orchestrated environment instead of hardcoding them into flows.
+
+#### Status
+
+This module is currently at the infrastructure stage — Kestra is running locally, but flow definitions that automate ingestion, embedding, and evaluation from Modules 1, 2, and 4 have not been added yet.
+
+📁 Detailed notes and setup can be found in the `module-3` directory.
+
+---
+
+### Module 4 – Evaluation
+
+Module 4 focused on evaluation: building a ground-truth dataset and using it to systematically score retrieval quality, generated answers, and agent behavior, instead of judging pipeline quality by eye. Monitoring is intentionally out of scope here and left for a later stage.
+
+#### Topics Covered
+
+* Synthetic Ground Truth Generation
+* Search / Retrieval Evaluation (Hit Rate, MRR)
+* Search Boosting Parameter Tuning
+* RAG Answer Evaluation (LLM-as-a-Judge)
+* Agentic Evaluation (Answer Quality + Tool-Use Trajectory)
+* Token Usage and Cost Tracking
+
+#### Key Learnings
+
+* Generated a synthetic ground-truth question set by prompting an LLM to emulate a student, using structured outputs.
+* Learned to evaluate retrieval using Hit Rate (is the right document found at all?) and MRR (how high does it rank?).
+* Grid-searched field boosting weights against MRR instead of tuning search relevance by hand.
+* Used an LLM-as-a-judge approach to score RAG-generated answers against the original FAQ answers.
+* Extended evaluation to a tool-calling agent, scoring both its final answer and whether its tool-use trajectory made sense.
+* Tracked token usage and cost across large batches of parallel LLM evaluation calls.
+
+#### Most Valuable Insight
+
+One of the most important takeaways from this module was that evaluating an agent requires looking past the final answer.
+
+> A correct final answer reached through a nonsensical or wasteful tool-use trajectory is still a problem worth catching. Evaluation needs to score the answer and the path taken to get there.
+
+📁 Detailed notes, notebooks, and implementations can be found in the `module-4` directory.
+
+---
+
 ## Learning Journey
 
-Current understanding developed through Modules 1 and 2:
+Current understanding developed through Modules 1–4:
 
 ```text
 LLMs
@@ -172,37 +229,42 @@ Agents
 Agentic RAG
   ↓
 Frameworks & Orchestration
+  ↓
+Workflow Orchestration (Kestra)
+  ↓
+Ground Truth Generation
+  ↓
+Search / RAG / Agent Evaluation
 ```
 
-This journey has helped me understand how modern AI systems move from raw documents to production-ready retrieval pipelines capable of supporting Large Language Models with external knowledge.
+This journey has helped me understand how modern AI systems move from raw documents to production-ready retrieval pipelines, and from there to pipelines that are both automated and measurably evaluated.
 
 ---
 
 ## What's Next?
 
-The next stage of the Zoomcamp focuses on **Workflow Orchestration with Kestra**.
+The next stage of the Zoomcamp focuses on finishing **Workflow Orchestration with Kestra** and moving from evaluation toward **monitoring**.
 
 Key areas I expect to explore include:
 
-* Workflow automation
-* Pipeline orchestration
-* Scheduled data ingestion
-* Automated embedding generation
-* Managing multi-step AI workflows
+* Defining actual Kestra flows for ingestion, embedding, and evaluation
+* Scheduled, automated data ingestion
+* Wiring the Module 4 evaluation notebooks into orchestrated pipelines
+* Moving from one-off evaluation runs to ongoing monitoring of answer quality, cost, and latency
 * Building reproducible and maintainable AI systems
 
-A major goal will be moving from manually executed notebooks and scripts toward automated, production-oriented AI pipelines.
+A major goal remains moving from manually executed notebooks and scripts toward automated, production-oriented AI pipelines.
 
 ---
 
 ## Future Modules
 
-Future modules will continue building upon the foundations established in Modules 1 and 2. Topics, projects, and implementations will be added as they are completed throughout the course.
+Future modules will continue building upon the foundations established in Modules 1–4. Topics, projects, and implementations will be added as they are completed throughout the course.
 
 Planned areas include:
 
-* Workflow Orchestration
-* Evaluation and Monitoring
+* Workflow Orchestration (continued)
+* Monitoring
 * Agentic Systems
 * Production AI Engineering Practices
 * End-to-End AI Applications
